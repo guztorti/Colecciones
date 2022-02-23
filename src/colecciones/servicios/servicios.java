@@ -5,7 +5,10 @@
 package colecciones.servicios;
 
 import colecciones.entidades.Raza;
+import colecciones.utilidades.Comparadores;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -40,9 +43,50 @@ public class servicios {
                }
           } while (salir!='n');
           
-          for (Raza raza : razas) {
-               System.out.println(raza);
-          }
+          mostrarLista(razas);
+          
           return 1;
      }
+     public boolean buscarRaza(Raza buscada){
+          Iterator itr = razas.iterator();
+          while (itr.hasNext()){
+               if (itr.next().equals(buscada)) {
+                    System.out.println(String.format("La raza fué encontrada, desea eliminarla?", buscada.getNombre()));
+                    if (scn.nextBoolean()) {
+                         borrarRaza(buscada);
+                    }
+                    ordenarLista(razas);
+                    mostrarLista(razas);
+                    return true;
+               }
+          }
+          ordenarLista(razas);
+          mostrarLista(razas);
+          return false;
+     }
+     public String borrarRaza(Raza desecho){
+          Iterator itr = razas.iterator();
+          String nombre = desecho.getNombre(), aplica = desecho.getAplica();
+          while (itr.hasNext()){
+               if (itr.next().equals(desecho)) {
+                    itr.remove();
+               }
+          }
+          return String.format("la raza de %s, %s fue eliminada", aplica ,nombre);
+     }
+     public int ordenarLista(ArrayList lista){
+          Collections.sort(lista, Comparadores.ordenarPorNombreDesc);
+          return 1;
+     }
+     public boolean mostrarLista(ArrayList lista){
+          for (Object raza : lista) {
+               System.out.println(raza);
+          }
+          return true;
+     }
 }
+//Continuando el ejercicio anterior, despu s de mostrar los perros, al usuario se le
+//pedir  un perro y se recorrer  la lista con un Iterator, se buscar  el perro en la lista.
+//Si el perro est  en la lista, se eliminar  el perro que ingres  el usuario y se mostrar 
+//la lista ordenada. Si el perro no se encuentra en la lista, se le informar  al usuario y
+//se mostrar  la lista ordenada.
