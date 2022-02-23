@@ -4,6 +4,7 @@
  */
 package __main;
 
+import colecciones.entidades.Raza;
 import colecciones.servicios.servicios;
 
 /**
@@ -21,6 +22,7 @@ public class principal {
           servicios srv = new servicios();
           
           srv.ingresarRaza();
+          System.out.println(srv.buscarRaza(new Raza("dogo","perro"))?"encontrada":"perdida");
      }
      
 }
