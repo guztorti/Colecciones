@@ -20,4 +20,11 @@ public class Comparadores {
           }
           
      };
+          public static Comparator<Raza> ordenarPorNombreAsc = new Comparator<Raza>(){
+          @Override
+          public int compare(Raza o1, Raza o2) {
+               return o1.getNombre().compareTo(o2.getNombre());
+          }
+          
+     };
 }

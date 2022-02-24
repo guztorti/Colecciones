@@ -74,16 +74,17 @@ public class servicios {
           }
           return String.format("la raza de %s, %s fue eliminada", aplica ,nombre);
      }
-     public int ordenarLista(ArrayList lista){
-          Collections.sort(lista, Comparadores.ordenarPorNombreDesc);
+     public int ordenarListaAsc(ArrayList lista){
+          Collections.sort(lista, Comparadores.ordenarPorNombreAsc);
           return 1;
      }
      public boolean mostrarLista(ArrayList lista){
-          for (Object raza : lista) {
-               System.out.println(raza);
+          for (Object e : lista) {
+               System.out.println(e);
           }
           return true;
      }
+     
 }
 //Continuando el ejercicio anterior, despu s de mostrar los perros, al usuario se le
 //pedir  un perro y se recorrer  la lista con un Iterator, se buscar  el perro en la lista.
