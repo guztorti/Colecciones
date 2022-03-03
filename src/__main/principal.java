@@ -4,10 +4,7 @@
  */
 package __main;
 
-import colecciones.entidades.Alumno;
-import colecciones.entidades.Raza;
 import colecciones.servicios.servicios;
-import java.util.Scanner;
 
 /**
  *
@@ -20,25 +17,27 @@ public class principal {
       */
      public static void main(String[] args) {
           // TODO code application logic here
-          
+
           servicios srv = new servicios();
-          Scanner scn = new Scanner(System.in).useDelimiter("\n");
           
-          srv.ingresarRaza();
-          System.out.println(srv.buscarRaza(new Raza("dogo","perro"))?"encontrada":"perdida");
           
-          //proceso de crear un alumno
-          char otro = 'n';
-          do {
-               Alumno alumno = srv.crearAlumno();
-               alumno.setNotas(srv.cargarNotas(alumno.getNombre()));
-               System.out.println("¿Desea ingresar otro alumno? ");
-               do {                    
-                    System.out.println("debe ingresar \"Si\"/\"No\"");
-                    otro = scn.next().toLowerCase().charAt(0);
-               } while (otro != 's' || otro != 'n');
-          } while (otro != 'n');
-          
+//          ///Ejercicio 1 y 2
+//          srv.mascotas();
+//          ///Ejercicio 3 proceso de crear un alumno
+//          srv.alumnos();
+//          ///Ejercicio 4 proceso cargar peliculas
+//          srv.peliculas();
+//          ///Ejercicio 5 Paises
+//          srv.paises();
+//          ///Ejercicio 6 Almacen
+//          srv.almacen();
+//          ///Ejercicio 1 extra lista de números
+//          srv.ingresarNumeros();
+//          ///Ejercicio 2 extra cantantes famosos
+//          srv.cantantes();
+//          ///Ejercicio 3 extra libreria
+//          srv.biblioteca();
+          ///Ejercicio 4 extra códigos postales
+          srv.codigosPostales();
      }
-     
 }
