@@ -618,14 +618,3 @@ public class servicios {
      }
 }
 
-/*Almacena en un HashMap los c digos postales de 10 ciudades a elecci n de esta
-p gina: https://mapanet.eu/index.htm. Nota: Poner el c digo postal sin la letra, solo el
-numero.
-• Pedirle al usuario que ingrese 10 c digos postales y sus ciudades.
-• Muestra por pantalla los datos introducidos
-• Pide un c digo postal y muestra la ciudad asociada si existe sino avisa al usuario.
-• Muestra por pantalla los datos
-• Agregar una ciudad con su c digo postal correspondiente m s al HashMap.
-• Elimina 3 ciudades existentes dentro del HashMap, que pida el usuario.
-• Muestra por pantalla los datos
-*/
